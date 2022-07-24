@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import BaseInput from './components/BaseInput.vue';
+import BaseSelect from './components/BaseSelect.vue';
+
+const categoryOptions = ['Web Development', 'Programming', 'Design', 'Other'];
 
 const event = ref({});
 </script>
@@ -14,6 +17,14 @@ const event = ref({});
 
     <h2>Where is your event?</h2>
     <BaseInput id="location" label="Location" v-model="event.location" />
+
+    <h2>Select a category</h2>
+    <BaseSelect
+      id="categoty"
+      label="Category"
+      v-model="event.category"
+      :options="categoryOptions"
+    />
   </div>
 
   <pre style="text-align: left">
