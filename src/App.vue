@@ -3,7 +3,9 @@ import { ref } from 'vue';
 
 const categoryOptions = ['Web Development', 'Programming', 'Design', 'Other'];
 
-const event = ref({});
+const event = ref({
+  extras: {},
+});
 </script>
 
 <template>
@@ -23,6 +25,10 @@ const event = ref({});
       v-model="event.category"
       :options="categoryOptions"
     />
+
+    <h2>Extras</h2>
+    <BaseCheckbox id="catering" v-model="event.extras.catering" label="Catering" />
+    <BaseCheckbox id="music" v-model="event.extras.music" label="Music" />
   </div>
 
   <pre style="text-align: left">
