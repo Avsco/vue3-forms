@@ -27,27 +27,37 @@ const sendForm = async () => {
 <template>
   <h1>Vue form</h1>
   <form @submit.prevent="sendForm">
-    <h2>Name & describe your event</h2>
-    <BaseInput id="title" label="Title" v-model="event.title" />
-    <BaseInput id="description" label="Description" v-model="event.description" />
+    <fieldset>
+      <legend>Name & describe your event</legend>
+      <BaseInput id="title" label="Title" v-model="event.title" />
+      <BaseInput id="description" label="Description" v-model="event.description" />
+    </fieldset>
 
-    <h2>Where is your event?</h2>
-    <BaseInput id="location" label="Location" v-model="event.location" />
+    <fieldset>
+      <legend>Where is your event?</legend>
+      <BaseInput id="location" label="Location" v-model="event.location" />
+    </fieldset>
 
-    <h2>Select a category</h2>
-    <BaseSelect
-      id="categoty"
-      label="Category"
-      v-model="event.category"
-      :options="categoryOptions"
-    />
+    <fieldset>
+      <legend>Select a category</legend>
+      <BaseSelect
+        id="categoty"
+        label="Category"
+        v-model="event.category"
+        :options="categoryOptions"
+      />
+    </fieldset>
 
-    <h2>Extras</h2>
-    <BaseCheckbox id="catering" v-model="event.extras.catering" label="Catering" />
-    <BaseCheckbox id="music" v-model="event.extras.music" label="Music" />
+    <fieldset>
+      <legend>Extras</legend>
+      <BaseCheckbox id="catering" v-model="event.extras.catering" label="Catering" />
+      <BaseCheckbox id="music" v-model="event.extras.music" label="Music" />
+    </fieldset>
 
-    <h2>Are pats allowed?</h2>
-    <BaseRadioGroup v-model="event.pets" name="pets" :options="petOptions" />
+    <fieldset>
+      <legend>Are pats allowed?</legend>
+      <BaseRadioGroup v-model="event.pets" name="pets" :options="petOptions" />
+    </fieldset>
 
     <button type="submit">Submit</button>
   </form>
