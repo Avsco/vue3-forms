@@ -1,7 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import BaseInput from './components/BaseInput.vue';
-import BaseSelect from './components/BaseSelect.vue';
 
 const categoryOptions = ['Web Development', 'Programming', 'Design', 'Other'];
 
