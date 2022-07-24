@@ -29,6 +29,10 @@ const event = ref({
     <h2>Extras</h2>
     <BaseCheckbox id="catering" v-model="event.extras.catering" label="Catering" />
     <BaseCheckbox id="music" v-model="event.extras.music" label="Music" />
+
+    <h2>Are pats allowed?</h2>
+    <BaseRadio v-model="event.pets" name="pets" :value="1" label="Yes" />
+    <BaseRadio v-model="event.pets" name="pets" :value="0" label="No" />
   </div>
 
   <pre style="text-align: left">
