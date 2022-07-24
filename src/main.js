@@ -1,5 +1,18 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+// import { upperFirst, camelCase } from 'lodash';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+// webpack
+// const requiereComponent = require.context('./components', false, /Base[A-Z]\w+\.(vue|js)$/);
+// requiereComponent.keys().forEach((fileName) => {
+//   const componentConfig = requiereComponent(fileName);
+
+//   const componentName = upperFirst(camelCase(fileName.replace(/^\.\/(.*)\.\w+$/, '$1')));
+
+//   app.component(componentName, componentConfig.default || componentConfig);
+// });
+
+app.mount('#app');
