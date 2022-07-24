@@ -10,11 +10,23 @@ const petOptions = [
 const event = ref({
   extras: {},
 });
+
+const sendForm = async () => {
+  try {
+    const data = await fetch('https://my-json-server.typicode.com/Code-Pop/Vue-3-Forms/events', {
+      method: 'POST',
+      body: event.value,
+    });
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
 
 <template>
   <h1>Vue form</h1>
-  <div>
+  <form @submit.prevent="sendForm">
     <h2>Name & describe your event</h2>
     <BaseInput id="title" label="Title" v-model="event.title" />
     <BaseInput id="description" label="Description" v-model="event.description" />
@@ -36,7 +48,9 @@ const event = ref({
 
     <h2>Are pats allowed?</h2>
     <BaseRadioGroup v-model="event.pets" name="pets" :options="petOptions" />
-  </div>
+
+    <button type="submit">Submit</button>
+  </form>
 
   <pre style="text-align: left">
   {{ event }}
