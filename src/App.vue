@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 
 const categoryOptions = ['Web Development', 'Programming', 'Design', 'Other'];
+const petOptions = [
+  { label: 'Yes', value: 1 },
+  { label: 'No', value: 0 },
+];
 
 const event = ref({
   extras: {},
@@ -31,8 +35,7 @@ const event = ref({
     <BaseCheckbox id="music" v-model="event.extras.music" label="Music" />
 
     <h2>Are pats allowed?</h2>
-    <BaseRadio v-model="event.pets" name="pets" :value="1" label="Yes" />
-    <BaseRadio v-model="event.pets" name="pets" :value="0" label="No" />
+    <BaseRadioGroup v-model="event.pets" name="pets" :options="petOptions" />
   </div>
 
   <pre style="text-align: left">
